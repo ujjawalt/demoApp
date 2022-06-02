@@ -1,0 +1,8 @@
+<% if @blog.errors.any? %>
+    <h2>Following errors encountered</h2>
+    <ul> 
+        <% @blog.errors.full_messages.each do |msg| %> 
+        <li> <%= msg %> </li>
+        <%end%>
+    </ul>
+<%end%>
