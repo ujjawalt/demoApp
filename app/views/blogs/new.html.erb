@@ -1,0 +1,27 @@
+<h1>Create Blog</h1>
+
+<% if @blog.errors.any? %>
+    <h2>Following errors encountered</h2>
+    <ul> 
+        <% @blog.errors.full_messages.each do |msg| %> 
+        <li> <%= msg %> </li>
+        <%end%>
+    </ul>
+<%end%>
+
+<%= form_with scope: :blog, url: blogs_path, data: {turbo: false}, local: true do |f| %>
+
+    <p>
+        <%= f.label :title %> <br>
+        <%= f.text_field :title %>
+    </p>
+
+    <p>
+        <%= f.label :description %> <br>
+        <%= f.text_field :description %>
+    </p>
+
+    <p>
+        <%= f.submit %>
+    </p>
+<%end%>
