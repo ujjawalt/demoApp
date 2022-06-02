@@ -1,0 +1,20 @@
+<h1>This is index page</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Placeholder</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @blog.each do |blog| %>
+        <tr>
+            <td> <%= blog.title %> </td>
+            <td> <%= blog.description %> </td>
+            <td>Placeholder</td>
+        <%end%>
+        </tr>
+    </tbody>
+</table>
